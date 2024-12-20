@@ -6,14 +6,14 @@ model = YOLO("yolo11n.pt")  # load a pretrained model (recommended for training)
 # Train the model
 results = model.train(
     model='yolo11n.pt',  # 预训练模型路径
-    data=r'C:\Users\13617\Desktop\mycode\eda_match\datasets\eda\eda.yaml',  # 数据集配置文件路径
+    data=r'/home/ubuntu/eda_match/datasets/eda/eda.yaml',  # 数据集配置文件路径
     epochs=100,  # 训练100个epoch
     batch=16,  # 每批次16张图片
     imgsz=640,  # 图像大小
     save=True,  # 保存训练过程中模型检查点
     save_period=10,  # 每10个epoch保存一次模型
     cache=False,  # 不使用缓存
-    device='xpu',  # 
+    device=0,  # 
     workers=8,  # 数据加载使用8个线程
     project='datasets/eda',  # 项目目录
     name='yolo_train_run',  # 训练子目录名称
